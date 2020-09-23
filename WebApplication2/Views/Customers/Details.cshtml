@@ -1,0 +1,20 @@
+﻿@model WebApplication2.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1> @Html.DisplayFor(model => model.Name)</h1>
+
+    <hr />
+  
+        <ul>
+            <li>Membership Types: @Model.MembershipType.Name  </li>
+            <li>Date of Birthday:  @Model.BirthDate.ToShortDateString()   </li>
+        </ul>
+
+        <p>@Html.ActionLink("Edit", "Edit", new { id = Model.Id}) |
+        @Html.ActionLink("Back to List", "Index")</p>
+
+
