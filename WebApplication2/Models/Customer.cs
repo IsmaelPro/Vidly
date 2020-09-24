@@ -18,10 +18,8 @@ namespace WebApplication2.Models
         [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
 
-        
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date of Birthday")]
-        public DateTime BirthDate { get; set; }
+        [Min18YearsIfAMember]
+        public DateTime? BirthDate { get; set; }
     }
 }

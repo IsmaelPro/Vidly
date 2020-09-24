@@ -311,3 +311,7 @@ C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.csproj.CopyComplete
 C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.dll
 C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.pdb
 C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.CreatedGenreTable.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AlterBirthdateToNullable.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AddStaticPropertiesToValidationToMembershipType.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AlterMoviesPropertiesToRequired.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AlterMoviesPropertiesToRequiredGenreId.resources

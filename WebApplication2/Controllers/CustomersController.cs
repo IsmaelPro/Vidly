@@ -63,20 +63,12 @@ namespace WebApplication2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,Name,IsSubscribedToNewsLetter,MembershipTypeId,BirthDate")] Customer customer)
         {
-            var date = DateTime.Now.Year - customer.BirthDate.Year;
 
-            if (date < 18)
+            if (ModelState.IsValid)
             {
-                return Content("Not allowed");
-            }
-            else
-            {
-                if (ModelState.IsValid)
-                {
-                    db.Customers.Add(customer);
-                    await db.SaveChangesAsync();
-                    return RedirectToAction("Index");
-                }
+                db.Customers.Add(customer);
+                await db.SaveChangesAsync();
+                return RedirectToAction("Index");
             }
 
 
