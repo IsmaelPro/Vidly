@@ -23,6 +23,9 @@ namespace WebApplication2.App_Start
             Mapper.CreateMap<MovieDto, Movie>()
                .ForMember(c => c.Id, opt => opt.Ignore());
 
+            Mapper.CreateMap<MembershipTypeDto, MembershipType>()
+               .ForMember(c => c.Id, opt => opt.Ignore());
+
 
 
         }

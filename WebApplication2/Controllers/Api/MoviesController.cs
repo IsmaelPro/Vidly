@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -12,12 +13,18 @@ namespace WebApplication2.Controllers.Api
 {
     public class MoviesController : ApiController
     {
-        private ApplicationDbContext _context = new ApplicationDbContext();
+        private ApplicationDbContext _context;
+
+        private MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
 
         //GET / api/movies
         public IEnumerable<MovieDto> GetMovies()
         {
             return _context.Movies
+                .Include(m => m.Genre)
                 .ToList()
                 .Select(Mapper.Map<Movie, MovieDto>);
         }

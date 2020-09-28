@@ -14,6 +14,8 @@ namespace WebApplication2.Dtos
         [Required]
         public string Name { get; set; }
 
+        public Genre Genre { get; set; }
+
         [Required]
         public int GenreId { get; set; }
 
