@@ -505,3 +505,7 @@ F:\ccloning\WebApplication2\obj\Debug\WebApplication2.csproj.CopyComplete
 F:\ccloning\WebApplication2\obj\Debug\WebApplication2.dll
 F:\ccloning\WebApplication2\obj\Debug\WebApplication2.pdb
 F:\ccloning\WebApplication2\obj\Debug\WebApplication2.Migrations.AlterMovieGenreIdToNullable.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AlterMovieGenreIdToNullable.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.SeedUsers.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AddDrivingLicensceToApplicationUser.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AddPhoneToApplicationUser.resources

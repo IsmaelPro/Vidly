@@ -16,13 +16,17 @@ namespace WebApplication2.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Movies
-        public async Task<ActionResult> Index()
+
+        public ViewResult Index()
         {
-            var movies = db.Movies.Include(m => m.Genre);
-            return View(await movies.ToListAsync());
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
+
+            return View("ReadOnlyList");
         }
 
         // GET: Movies/Details/5
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -38,6 +42,7 @@ namespace WebApplication2.Controllers
         }
 
         // GET: Movies/Create
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Create()
         {
             ViewBag.GenreId = new SelectList(db.Genres, "Id", "Name");
@@ -49,6 +54,7 @@ namespace WebApplication2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public async Task<ActionResult> Create([Bind(Include = "Id,Name,GenreId,ReleaseDate,DateAdded,NumberInStock")] Movie movie)
         {
             if (ModelState.IsValid)
@@ -63,6 +69,7 @@ namespace WebApplication2.Controllers
         }
 
         // GET: Movies/Edit/5
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -83,6 +90,7 @@ namespace WebApplication2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public async Task<ActionResult> Edit([Bind(Include = "Id,Name,GenreId,ReleaseDate,DateAdded,NumberInStock")] Movie movie)
         {
             if (ModelState.IsValid)
@@ -96,6 +104,7 @@ namespace WebApplication2.Controllers
         }
 
         // GET: Movies/Delete/5
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -113,6 +122,7 @@ namespace WebApplication2.Controllers
         // POST: Movies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
             Movie movie = await db.Movies.FindAsync(id);

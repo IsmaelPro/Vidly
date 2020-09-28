@@ -29,11 +29,13 @@ namespace WebApplication2.Controllers
         }
 
         // GET: Customers
+
         public async Task<ActionResult> Index()
         {
-            return View(await db.Customers
-                .Include(c => c.MembershipType)
-                .ToListAsync());
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("ListCustomers");
+
+            return View("CustomerReadOnly");
         }
 
         // GET: Customers/Details/5
