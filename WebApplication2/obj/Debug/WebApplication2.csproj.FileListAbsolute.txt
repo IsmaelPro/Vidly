@@ -509,3 +509,8 @@ C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AlterMovi
 C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.SeedUsers.resources
 C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AddDrivingLicensceToApplicationUser.resources
 C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AddPhoneToApplicationUser.resources
+C:\projects\Vidly\WebApplication2\bin\Glimpse.Ado.dll
+C:\projects\Vidly\WebApplication2\bin\Glimpse.AspNet.dll
+C:\projects\Vidly\WebApplication2\bin\Glimpse.Core.dll
+C:\projects\Vidly\WebApplication2\bin\Glimpse.EF6.dll
+C:\projects\Vidly\WebApplication2\bin\Glimpse.Mvc5.dll
