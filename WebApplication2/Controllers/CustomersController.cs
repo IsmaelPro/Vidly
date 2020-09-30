@@ -30,7 +30,7 @@ namespace WebApplication2.Controllers
 
         // GET: Customers
 
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
             if (User.IsInRole(RoleName.CanManageMovies))
                 return View("ListCustomers");

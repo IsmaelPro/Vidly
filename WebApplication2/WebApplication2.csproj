@@ -219,15 +219,18 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
+    <Compile Include="Controllers\Api\RentalsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\GenresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
+    <Compile Include="Dtos\RentalDto.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -324,6 +327,38 @@
     <Compile Include="Migrations\202009281619440_AddPhoneToApplicationUser.designer.cs">
       <DependentUpon>202009281619440_AddPhoneToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009291150068_AddRentalClass.cs" />
+    <Compile Include="Migrations\202009291150068_AddRentalClass.designer.cs">
+      <DependentUpon>202009291150068_AddRentalClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009291228311_AddRentalClassPersist.cs" />
+    <Compile Include="Migrations\202009291228311_AddRentalClassPersist.designer.cs">
+      <DependentUpon>202009291228311_AddRentalClassPersist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009291333425_AlterRental.cs" />
+    <Compile Include="Migrations\202009291333425_AlterRental.designer.cs">
+      <DependentUpon>202009291333425_AlterRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009291353447_AlterRentalC.cs" />
+    <Compile Include="Migrations\202009291353447_AlterRentalC.designer.cs">
+      <DependentUpon>202009291353447_AlterRentalC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009291402585_AddNumberAvailbleToRental.cs" />
+    <Compile Include="Migrations\202009291402585_AddNumberAvailbleToRental.designer.cs">
+      <DependentUpon>202009291402585_AddNumberAvailbleToRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009291405390_AddNumberAvailbleToRentalClass.cs" />
+    <Compile Include="Migrations\202009291405390_AddNumberAvailbleToRentalClass.designer.cs">
+      <DependentUpon>202009291405390_AddNumberAvailbleToRentalClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009291409520_AddNumberAvailbleToMovie.cs" />
+    <Compile Include="Migrations\202009291409520_AddNumberAvailbleToMovie.designer.cs">
+      <DependentUpon>202009291409520_AddNumberAvailbleToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009291601311_AlterRentalRequiredItems.cs" />
+    <Compile Include="Migrations\202009291601311_AlterRentalRequiredItems.designer.cs">
+      <DependentUpon>202009291601311_AlterRentalRequiredItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -334,6 +369,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -505,9 +541,14 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\typeahead.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -612,6 +653,8 @@
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -690,6 +733,12 @@
     <Content Include="Scripts\src\utils\setAttributes.js" />
     <Content Include="Scripts\src\utils\setStyles.js" />
     <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -757,6 +806,7 @@
     <Content Include="Views\Genres\Index.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
     <Content Include="Views\Customers\CustomerReadOnly.cshtml" />
+    <Content Include="Views\Rentals\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -841,6 +891,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009281619440_AddPhoneToApplicationUser.resx">
       <DependentUpon>202009281619440_AddPhoneToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009291150068_AddRentalClass.resx">
+      <DependentUpon>202009291150068_AddRentalClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009291228311_AddRentalClassPersist.resx">
+      <DependentUpon>202009291228311_AddRentalClassPersist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009291333425_AlterRental.resx">
+      <DependentUpon>202009291333425_AlterRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009291353447_AlterRentalC.resx">
+      <DependentUpon>202009291353447_AlterRentalC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009291402585_AddNumberAvailbleToRental.resx">
+      <DependentUpon>202009291402585_AddNumberAvailbleToRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009291405390_AddNumberAvailbleToRentalClass.resx">
+      <DependentUpon>202009291405390_AddNumberAvailbleToRentalClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009291409520_AddNumberAvailbleToMovie.resx">
+      <DependentUpon>202009291409520_AddNumberAvailbleToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009291601311_AlterRentalRequiredItems.resx">
+      <DependentUpon>202009291601311_AlterRentalRequiredItems.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

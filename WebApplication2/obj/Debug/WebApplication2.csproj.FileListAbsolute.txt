@@ -514,3 +514,11 @@ C:\projects\Vidly\WebApplication2\bin\Glimpse.AspNet.dll
 C:\projects\Vidly\WebApplication2\bin\Glimpse.Core.dll
 C:\projects\Vidly\WebApplication2\bin\Glimpse.EF6.dll
 C:\projects\Vidly\WebApplication2\bin\Glimpse.Mvc5.dll
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AddRentalClass.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AddRentalClassPersist.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AlterRental.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AlterRentalC.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AddNumberAvailbleToRental.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AddNumberAvailbleToRentalClass.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AddNumberAvailbleToMovie.resources
+C:\projects\Vidly\WebApplication2\obj\Debug\WebApplication2.Migrations.AlterRentalRequiredItems.resources

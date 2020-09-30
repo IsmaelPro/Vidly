@@ -16,7 +16,7 @@
 
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.BirthDate)
-        @Html.TextBoxFor(m => m.Customer.BirthDate.ToShortDateString(), new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Customer.BirthDate, new { @class = "form-control" })
     </div>
 
     <div class="checkbox">
